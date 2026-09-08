@@ -45,7 +45,8 @@ public class Filme {
 
     // Verifica se o filme é clássico
     public boolean ehClassico() {
-        int anoAtual = 2026;
+        LocalDateTime agora = LocalDateTime.now();
+        int anoAtual = agora.getYear();
         return anoAtual - anoLancamento > 30;
     }
     public LocalDateTime getDataCadastro() {
