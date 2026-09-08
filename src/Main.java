@@ -4,7 +4,7 @@ import java.time.format.DateTimeFormatter;
 
 public class Main {
 
-    public static void main(String[] args) {git
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
@@ -18,7 +18,7 @@ public class Main {
             System.out.println("\n===== MUSEU CINEMATOGRÁFICO =====");
             System.out.println("1 - Cadastrar filme");
             System.out.println("2 - Alterar avaliação");
-            System.out.println("3 - Exibir informações do filme cadastrado"); /*Alterado de verificar se é classico para exibir informções dos filmes */
+            System.out.println("3 - Exibir informações do filme cadastrado"); /*Alterado de verificar se é classico ==> exibir informações dos filmes */
             System.out.println("4 - Encerrar");
             System.out.print("Escolha uma opção: ");
 
@@ -50,25 +50,25 @@ public class Main {
                             avaliacao
                     );
 
-                    System.out.println("Filme: " + filme.getTitulo());
+                    System.out.println("Título: " + filme.getTitulo());
                     System.out.println("Avaliação: " + filme.getAvaliacao());
                     System.out.println("Genero: " + filme.getGenero());
 
                     if (filme.ehClassico()) {
-                        System.out.println("Filme lançado em: " + filme.getAnoLancamento() + " - Clássico");
+                        System.out.println("Título lançado em: " + filme.getAnoLancamento() + " - Clássico");
                     } else {
-                        System.out.println("Filme lançado em: " + filme.getAnoLancamento() + " - Contemporâneo");
+                        System.out.println("Título lançado em: " + filme.getAnoLancamento() + " - Contemporâneo");
                     }
 
                     /// System.out.println(filme.ehClassico());
-                    System.out.println("Filme cadastrado com sucesso!  " + filme.getDataCadastro().format(formato));
+                    System.out.println("Título cadastrado com sucesso!  " + filme.getDataCadastro().format(formato));
 
                     break;
 
                 case 2:
 
                     if (filme == null) {
-                        System.out.println("Nenhum filme cadastrado.");
+                        System.out.println("Nenhum título cadastrado.");
                     } else {
 
 
@@ -113,13 +113,13 @@ public class Main {
                     System.out.println(filme.getGenero());
 
                     if (filme.ehClassico()) {
-                        System.out.println("Filme com mais de trinta anos: Clássico");
+                        System.out.println("Título com mais de trinta anos: Clássico");
                     } else {
-                        System.out.println("Filme com menos de trinta anos: contemporâneo.");
+                        System.out.println("Título com menos de trinta anos: contemporâneo.");
                     }
 
                         /// System.out.println(filme.ehClassico());
-                    System.out.println("Filme cadastrado em " + filme.getDataCadastro().format(formato));
+                    System.out.println("Título cadastrado em " + filme.getDataCadastro().format(formato));
 
                     break;
                 case 4:
