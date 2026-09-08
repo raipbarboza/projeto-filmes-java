@@ -108,9 +108,9 @@ public class Main {
 
                 case 3:
 
-                    System.out.println(filme.getTitulo());
-                    System.out.println(filme.getAvaliacao());
-                    System.out.println(filme.getGenero());
+                    System.out.println("Título: " + filme.getTitulo());
+                    System.out.println("Avaliação: " + filme.getAvaliacao());
+                    System.out.println("Genero: " + filme.getGenero());
 
                     if (filme.ehClassico()) {
                         System.out.println("Título com mais de trinta anos: Clássico");
