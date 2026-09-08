@@ -1,5 +1,3 @@
-# projeto-filmes-java
-Rep para projeto de Desenvolvimento de sistemas aplicados - UFLA
 # Projeto Filmes Java
 
 Projeto desenvolvido para a disciplina **Desenvolvimento de Sistemas Aplicados (63A-64A-70A-73A)** da **Universidade Federal de Lavras (UFLA)**.
