@@ -18,7 +18,7 @@ public class Main {
             System.out.println("\n===== MUSEU CINEMATOGRÁFICO =====");
             System.out.println("1 - Cadastrar filme");
             System.out.println("2 - Alterar avaliação");
-            System.out.println("3 - Exibir informações do filme cadastrado"); /*Alterado de verificar se é classico ==> exibir informações dos filmes */
+            System.out.println("3 - Exibir informações do filme cadastrado"); /* Alterado de verificar se é classico ==> exibir informações dos filmes */
             System.out.println("4 - Encerrar");
             System.out.print("Escolha uma opção: ");
 
@@ -60,7 +60,7 @@ public class Main {
                         System.out.println("Título lançado em: " + filme.getAnoLancamento() + " - Contemporâneo");
                     }
 
-                    /// System.out.println(filme.ehClassico());
+
                     System.out.println("Título cadastrado com sucesso!  " + filme.getDataCadastro().format(formato));
 
                     break;
@@ -91,20 +91,38 @@ public class Main {
 
                     break;
 
-                /*case 3:
-
-                    if (filme == null) {
-                        System.out.println("Nenhum filme cadastrado.");
-                    } else {
-
-                        if (filme.ehClassico()) {
-                            System.out.println("CLASSICO");
-                        } else {
-                            System.out.println("CONTEMPORANEO");
-                        }
-                    }
-
-                    break;*/
+                /*
+                 * Versão inicial do switch 3:
+                 * realizava apenas a verificação se o filme era clássico ou contemporâneo.
+                 *
+                 * Refatoração:
+                 * o case 3 foi aprimorado para exibir as informações completas do filme,
+                 * mantendo a responsabilidade da verificação de classificação no método
+                 * filme.ehClassico().
+                 *
+                 * Dessa forma, a regra de negócio permanece encapsulada na classe Filme,
+                 * enquanto o switch fica responsável apenas por apresentar os dados ao usuário.
+                 *
+                 * Essa abordagem melhora a organização do código e evita duplicar a lógica
+                 * de verificação de filmes clássicos em diferentes partes do programa.
+                 *
+                 * Versão anterior:
+                 *
+                 * case 3:
+                 *
+                 *     if (filme == null) {
+                 *         System.out.println("Nenhum filme cadastrado.");
+                 *     } else {
+                 *
+                 *         if (filme.ehClassico()) {
+                 *             System.out.println("CLASSICO");
+                 *         } else {
+                 *             System.out.println("CONTEMPORANEO");
+                 *         }
+                 *     }
+                 *
+                 *     break;
+                 */
 
                 case 3:
 
@@ -118,7 +136,7 @@ public class Main {
                         System.out.println("Título com menos de trinta anos: contemporâneo.");
                     }
 
-                        /// System.out.println(filme.ehClassico());
+
                     System.out.println("Título cadastrado em " + filme.getDataCadastro().format(formato));
 
                     break;
