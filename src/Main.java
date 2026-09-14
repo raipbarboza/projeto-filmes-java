@@ -13,17 +13,9 @@ public class Main {
 
         do {
 
-            String menu =
-                    "===== MUSEU CINEMATOGRÁFICO ====="
-                            + "\n\n1 - Cadastrar filme"
-                            + "\n2 - Alterar avaliação"
-                            + "\n3 - Exibir informações do filme cadastrado"
-                            + "\n4 - Encerrar";
+            String menu = "===== MUSEU CINEMATOGRÁFICO =====" + "\n\n1 - Cadastrar filme" + "\n2 - Alterar avaliação" + "\n3 - Exibir informações do filme cadastrado" + "\n4 - Encerrar";
 
-            String entradaOpcao = JOptionPane.showInputDialog(
-                    null,
-                    menu + "\n\nEscolha uma opção:"
-            );
+            String entradaOpcao = JOptionPane.showInputDialog(null, menu + "\n\nEscolha uma opção:");
 
             opcao = Integer.parseInt(entradaOpcao);
 
@@ -31,36 +23,19 @@ public class Main {
 
                 case 1: {
 
-                    String titulo = JOptionPane.showInputDialog(
-                            null,
-                            "Título:"
-                    );
+                    String titulo = JOptionPane.showInputDialog(null, "Título:");
 
-                    String entradaAno = JOptionPane.showInputDialog(
-                            null,
-                            "Ano de lançamento:"
-                    );
+                    String entradaAno = JOptionPane.showInputDialog(null, "Ano de lançamento:");
 
                     int anoLancamento = Integer.parseInt(entradaAno);
 
-                    String genero = JOptionPane.showInputDialog(
-                            null,
-                            "Gênero:"
-                    );
+                    String genero = JOptionPane.showInputDialog(null, "Gênero:");
 
-                    String entradaAvaliacao = JOptionPane.showInputDialog(
-                            null,
-                            "Avaliação:"
-                    );
+                    String entradaAvaliacao = JOptionPane.showInputDialog(null, "Avaliação:");
 
                     double avaliacao = Double.parseDouble(entradaAvaliacao);
 
-                    filme = new Filme(
-                            titulo,
-                            anoLancamento,
-                            genero,
-                            avaliacao
-                    );
+                    filme = new Filme(titulo, anoLancamento, genero, avaliacao);
 
                     String classificacao;
 
@@ -70,16 +45,7 @@ public class Main {
                         classificacao = "Contemporâneo";
                     }
 
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "Filme cadastrado com sucesso!"
-                                    + "\n\nTítulo: " + filme.getTitulo()
-                                    + "\nAno de lançamento: " + filme.getAnoLancamento()
-                                    + "\nGênero: " + filme.getGenero()
-                                    + "\nAvaliação: " + filme.getAvaliacao()
-                                    + "\nClassificação: " + classificacao
-                                    + "\nData de cadastro: "
-                                    + filme.getDataCadastro().format(formato)
+                    JOptionPane.showMessageDialog(null, "Filme cadastrado com sucesso!" + "\n\nTítulo: " + filme.getTitulo() + "\nAno de lançamento: " + filme.getAnoLancamento() + "\nGênero: " + filme.getGenero() + "\nAvaliação: " + filme.getAvaliacao() + "\nClassificação: " + classificacao + "\nData de cadastro: " + filme.getDataCadastro().format(formato)
 
                     );
 
@@ -90,33 +56,19 @@ public class Main {
 
                     if (filme == null) {
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Nenhum título cadastrado."
-                        );
+                        JOptionPane.showMessageDialog(null, "Nenhum título cadastrado.");
 
                     } else {
 
                         double avaliacaoAntiga = filme.getAvaliacao();
 
-                        String entradaNovaAvaliacao = JOptionPane.showInputDialog(
-                                null,
-                                "Avaliação atual: " + avaliacaoAntiga
-                                        + "\n\nDigite a nova avaliação:"
-                        );
+                        String entradaNovaAvaliacao = JOptionPane.showInputDialog(null, "Avaliação atual: " + avaliacaoAntiga + "\n\nDigite a nova avaliação:");
 
-                        double novaAvaliacao = Double.parseDouble(
-                                entradaNovaAvaliacao
-                        );
+                        double novaAvaliacao = Double.parseDouble(entradaNovaAvaliacao);
 
                         filme.alterarAvaliacao(novaAvaliacao);
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Avaliação alterada com sucesso!"
-                                        + "\n\nAvaliação antiga: " + avaliacaoAntiga
-                                        + "\nNova avaliação: " + filme.getAvaliacao()
-                        );
+                        JOptionPane.showMessageDialog(null, "Avaliação alterada com sucesso!" + "\n\nAvaliação antiga: " + avaliacaoAntiga + "\nNova avaliação: " + filme.getAvaliacao());
                     }
 
                     break;
@@ -158,10 +110,7 @@ public class Main {
 
                     if (filme == null) {
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                "Nenhum título cadastrado."
-                        );
+                        JOptionPane.showMessageDialog(null, "Nenhum título cadastrado.");
 
                     } else {
 
@@ -173,34 +122,20 @@ public class Main {
                             classificacao = "Contemporâneo";
                         }
 
-                        String informacoes =
-                                "INFORMAÇÕES DO FILME"
-                                        + "\n\nTítulo: " + filme.getTitulo()
-                                        + "\nAno de lançamento: " + filme.getAnoLancamento()
-                                        + "\nGênero: " + filme.getGenero()
-                                        + "\nAvaliação: " + filme.getAvaliacao()
-                                        + "\nClassificação: " + classificacao
-                                        + "\nData de cadastro: "
-                                        + filme.getDataCadastro().format(formato);
+                        String informacoes = "INFORMAÇÕES DO FILME" + "\n\nTítulo: " + filme.getTitulo() + "\nAno de lançamento: " + filme.getAnoLancamento() + "\nGênero: " + filme.getGenero() + "\nAvaliação: " + filme.getAvaliacao() + "\nClassificação: " + classificacao + "\nData de cadastro: " + filme.getDataCadastro().format(formato);
 
-                        JOptionPane.showMessageDialog(
-                                null,
-                                informacoes
-                        );
+                        JOptionPane.showMessageDialog(null, informacoes);
                     }
 
                     break;
                 }
 
                 case 4:
-                    JOptionPane.showMessageDialog(
-                            null,
-                            "Programa encerrado."
-                    );
+                    JOptionPane.showMessageDialog(null, "Programa encerrado.");
                     break;
 
                 default:
-                    System.out.println("Opção inválida.");
+                    JOptionPane.showMessageDialog(null, "Opção inválida.");
             }
 
         } while (opcao != 4);
