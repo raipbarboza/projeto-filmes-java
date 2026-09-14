@@ -40,7 +40,7 @@ public class Main {
 //
 //                    break;
 
-                case 1:
+                case 1: {
 
                     String titulo = JOptionPane.showInputDialog(
                             null,
@@ -91,9 +91,11 @@ public class Main {
                                     + "\nClassificação: " + classificacao
                                     + "\nData de cadastro: "
                                     + filme.getDataCadastro().format(formato)
+
                     );
 
                     break;
+                }
 
                 case 2:
 
@@ -163,36 +165,49 @@ public class Main {
                  *     break;
                  */
 
-                case 3:
+                case 3: {
 
                     if (filme == null) {
-                        System.out.println("Nenhum título cadastrado.");
+
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "Nenhum título cadastrado."
+                        );
 
                     } else {
 
-                        System.out.println("Título: " + filme.getTitulo());
-                        System.out.println("Avaliação: " + filme.getAvaliacao());
-                        System.out.println("Genero: " + filme.getGenero());
-                        System.out.println("Título cadastrado em " + filme.getDataCadastro().format(formato));
+                        String classificacao;
 
                         if (filme.ehClassico()) {
-                            System.out.println("Título com mais de trinta anos: Clássico");
+                            classificacao = "Clássico";
                         } else {
-                            System.out.println("Título com menos de trinta anos: Contemporâneo.");
+                            classificacao = "Contemporâneo";
                         }
 
+                        String informacoes =
+                                "INFORMAÇÕES DO FILME"
+                                        + "\n\nTítulo: " + filme.getTitulo()
+                                        + "\nAno de lançamento: " + filme.getAnoLancamento()
+                                        + "\nGênero: " + filme.getGenero()
+                                        + "\nAvaliação: " + filme.getAvaliacao()
+                                        + "\nClassificação: " + classificacao
+                                        + "\nData de cadastro: "
+                                        + filme.getDataCadastro().format(formato);
+
+                        JOptionPane.showMessageDialog(
+                                null,
+                                informacoes
+                        );
                     }
 
-
                     break;
+                }
+
                 case 4:
-
                     System.out.println("Programa encerrado.");
-
                     break;
 
                 default:
-
                     System.out.println("Opção inválida.");
             }
 
