@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
-
+import javax.swing.JOptionPane;
 
 public class Main {
 
@@ -27,21 +27,44 @@ public class Main {
 
             switch (opcao) {
 
+//                case 1:
+//
+//                    System.out.println("ANTES DO JOPTIONPANE");
+//
+//                    JOptionPane.showMessageDialog(
+//                            null,
+//                            "TESTE DO MAIN"
+//                    );
+//
+//                    System.out.println("DEPOIS DO JOPTIONPANE");
+//
+//                    break;
+
                 case 1:
 
-                    System.out.print("Título: ");
-                    String titulo = scanner.nextLine();
+                    String titulo = JOptionPane.showInputDialog(
+                            null,
+                            "Título:"
+                    );
 
-                    System.out.print("Ano de lançamento: ");
-                    int anoLancamento = scanner.nextInt();
-                    scanner.nextLine();
+                    String entradaAno = JOptionPane.showInputDialog(
+                            null,
+                            "Ano de lançamento:"
+                    );
 
-                    System.out.print("Gênero: ");
-                    String genero = scanner.nextLine();
+                    int anoLancamento = Integer.parseInt(entradaAno);
 
-                    System.out.print("Avaliação: ");
-                    double avaliacao = scanner.nextDouble();
-                    scanner.nextLine();
+                    String genero = JOptionPane.showInputDialog(
+                            null,
+                            "Gênero:"
+                    );
+
+                    String entradaAvaliacao = JOptionPane.showInputDialog(
+                            null,
+                            "Avaliação:"
+                    );
+
+                    double avaliacao = Double.parseDouble(entradaAvaliacao);
 
                     filme = new Filme(
                             titulo,
@@ -50,18 +73,25 @@ public class Main {
                             avaliacao
                     );
 
-                    System.out.println("Título: " + filme.getTitulo());
-                    System.out.println("Avaliação: " + filme.getAvaliacao());
-                    System.out.println("Genero: " + filme.getGenero());
+                    String classificacao;
 
                     if (filme.ehClassico()) {
-                        System.out.println("Título lançado em: " + filme.getAnoLancamento() + " - Clássico");
+                        classificacao = "Clássico";
                     } else {
-                        System.out.println("Título lançado em: " + filme.getAnoLancamento() + " - Contemporâneo");
+                        classificacao = "Contemporâneo";
                     }
 
-
-                    System.out.println("Título cadastrado com sucesso!  " + filme.getDataCadastro().format(formato));
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Filme cadastrado com sucesso!"
+                                    + "\n\nTítulo: " + filme.getTitulo()
+                                    + "\nAno de lançamento: " + filme.getAnoLancamento()
+                                    + "\nGênero: " + filme.getGenero()
+                                    + "\nAvaliação: " + filme.getAvaliacao()
+                                    + "\nClassificação: " + classificacao
+                                    + "\nData de cadastro: "
+                                    + filme.getDataCadastro().format(formato)
+                    );
 
                     break;
 
