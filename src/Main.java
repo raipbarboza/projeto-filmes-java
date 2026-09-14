@@ -1,4 +1,3 @@
-import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
 import javax.swing.JOptionPane;
 
@@ -6,7 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
         DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
         Filme filme = null;
@@ -15,30 +13,21 @@ public class Main {
 
         do {
 
-            System.out.println("\n===== MUSEU CINEMATOGRÁFICO =====");
-            System.out.println("1 - Cadastrar filme");
-            System.out.println("2 - Alterar avaliação");
-            System.out.println("3 - Exibir informações do filme cadastrado"); /* Alterado de verificar se é classico ==> exibir informações dos filmes */
-            System.out.println("4 - Encerrar");
-            System.out.print("Escolha uma opção: ");
+            String menu =
+                    "===== MUSEU CINEMATOGRÁFICO ====="
+                            + "\n\n1 - Cadastrar filme"
+                            + "\n2 - Alterar avaliação"
+                            + "\n3 - Exibir informações do filme cadastrado"
+                            + "\n4 - Encerrar";
 
-            opcao = scanner.nextInt();
-            scanner.nextLine();
+            String entradaOpcao = JOptionPane.showInputDialog(
+                    null,
+                    menu + "\n\nEscolha uma opção:"
+            );
+
+            opcao = Integer.parseInt(entradaOpcao);
 
             switch (opcao) {
-
-//                case 1:
-//
-//                    System.out.println("ANTES DO JOPTIONPANE");
-//
-//                    JOptionPane.showMessageDialog(
-//                            null,
-//                            "TESTE DO MAIN"
-//                    );
-//
-//                    System.out.println("DEPOIS DO JOPTIONPANE");
-//
-//                    break;
 
                 case 1: {
 
@@ -216,7 +205,6 @@ public class Main {
 
         } while (opcao != 4);
 
-        scanner.close();
     }
 
 }
