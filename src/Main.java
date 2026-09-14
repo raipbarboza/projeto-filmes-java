@@ -98,25 +98,34 @@ public class Main {
                 case 2:
 
                     if (filme == null) {
-                        System.out.println("Nenhum título cadastrado.");
-                    } else {
 
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "Nenhum título cadastrado."
+                        );
+
+                    } else {
 
                         double avaliacaoAntiga = filme.getAvaliacao();
 
-                        System.out.println("Avaliação atual: " + avaliacaoAntiga);
+                        String entradaNovaAvaliacao = JOptionPane.showInputDialog(
+                                null,
+                                "Avaliação atual: " + avaliacaoAntiga
+                                        + "\n\nDigite a nova avaliação:"
+                        );
 
-                        System.out.print("Digite a nova avaliação: ");
-                        double novaAvaliacao = scanner.nextDouble();
-                        scanner.nextLine();
-
+                        double novaAvaliacao = Double.parseDouble(
+                                entradaNovaAvaliacao
+                        );
 
                         filme.alterarAvaliacao(novaAvaliacao);
 
-
-                        System.out.println("Avaliação alterada!");
-                        System.out.println("Avaliação antiga: " + avaliacaoAntiga);
-                        System.out.println("Nova avaliação: " + filme.getAvaliacao());
+                        JOptionPane.showMessageDialog(
+                                null,
+                                "Avaliação alterada com sucesso!"
+                                        + "\n\nAvaliação antiga: " + avaliacaoAntiga
+                                        + "\nNova avaliação: " + filme.getAvaliacao()
+                        );
                     }
 
                     break;
