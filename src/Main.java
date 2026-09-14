@@ -204,7 +204,10 @@ public class Main {
                 }
 
                 case 4:
-                    System.out.println("Programa encerrado.");
+                    JOptionPane.showMessageDialog(
+                            null,
+                            "Programa encerrado."
+                    );
                     break;
 
                 default:
