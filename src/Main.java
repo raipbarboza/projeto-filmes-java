@@ -126,18 +126,24 @@ public class Main {
 
                 case 3:
 
-                    System.out.println("Título: " + filme.getTitulo());
-                    System.out.println("Avaliação: " + filme.getAvaliacao());
-                    System.out.println("Genero: " + filme.getGenero());
+                    if (filme == null) {
+                        System.out.println("Nenhum título cadastrado.");
 
-                    if (filme.ehClassico()) {
-                        System.out.println("Título com mais de trinta anos: Clássico");
                     } else {
-                        System.out.println("Título com menos de trinta anos: contemporâneo.");
+
+                        System.out.println("Título: " + filme.getTitulo());
+                        System.out.println("Avaliação: " + filme.getAvaliacao());
+                        System.out.println("Genero: " + filme.getGenero());
+                        System.out.println("Título cadastrado em " + filme.getDataCadastro().format(formato));
+
+                        if (filme.ehClassico()) {
+                            System.out.println("Título com mais de trinta anos: Clássico");
+                        } else {
+                            System.out.println("Título com menos de trinta anos: Contemporâneo.");
+                        }
+
                     }
 
-
-                    System.out.println("Título cadastrado em " + filme.getDataCadastro().format(formato));
 
                     break;
                 case 4:
